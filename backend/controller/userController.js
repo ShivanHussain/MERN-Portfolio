@@ -129,6 +129,7 @@ export const logout = catchAsyncErrors(async (req, res, next) => {
 
 //for Get user by Id 
 export const getUser = catchAsyncErrors(async (req, res, next) => {
+  console.log(req.cookies);
   try{
     const user = await User.findById(req.user.id);
   res.status(200).json({
